@@ -1,3 +1,6 @@
+Sukiyaki
+Manga
+Harakiri
 ○ Salade norvégienne
 ○ Œufs fauchés
 ○ Steak tartare
@@ -5,4 +8,7 @@
 ○ Profiteroles
 Lasagna bolognese
 Spaghetti carbonara
-
+Sushi
+Riz
+Avocado
+Poisson
