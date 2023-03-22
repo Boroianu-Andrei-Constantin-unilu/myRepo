@@ -1,3 +1,4 @@
+package Algorithms;
 // Binary Search in Java
 
 class BinItSearch {

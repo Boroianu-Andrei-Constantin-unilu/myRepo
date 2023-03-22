@@ -1,3 +1,4 @@
+package Algorithms;
 // Merge sort in Java
 
 class MergeSort {

@@ -1,3 +1,4 @@
+package Algorithms;
 // Shell sort in Java programming
 
 import java.util.Arrays;

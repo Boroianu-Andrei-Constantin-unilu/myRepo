@@ -1,3 +1,4 @@
+package Algorithms;
 // Heap Sort in Java
   
 public class HeapSort {

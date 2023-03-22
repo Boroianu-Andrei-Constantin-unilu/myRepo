@@ -1,3 +1,4 @@
+package Algorithms;
 // Insertion sort in Java
 
 import java.util.Arrays;

@@ -1,3 +1,4 @@
+package Algorithms;
 // Linear Search in Java
 
 class LinearSearch {

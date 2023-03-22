@@ -1,3 +1,4 @@
+package Algorithms;
 // Selection sort in Java
 
 import java.util.Arrays;

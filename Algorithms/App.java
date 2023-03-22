@@ -1,3 +1,4 @@
+package Algorithms;
 import java.util.Calendar;
 
 record Invoice(String id, float amount) {
