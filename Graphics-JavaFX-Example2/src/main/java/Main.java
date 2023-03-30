@@ -1,5 +1,3 @@
-package lu.uni.graphics.javafxexample2;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,11 +7,11 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage Stage) throws Exception{
         Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 300));
-        primaryStage.show();
+        Stage.setTitle("Hello World");
+        Stage.setScene(new Scene(root, 300, 300));
+        Stage.show();
     }
 
     public static void main(String[] args) {
