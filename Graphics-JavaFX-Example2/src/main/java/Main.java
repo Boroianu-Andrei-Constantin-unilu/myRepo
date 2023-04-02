@@ -7,11 +7,13 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage Stage) throws Exception{
-        Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource("sample.fxml"));
-        Stage.setTitle("Hello World");
-        Stage.setScene(new Scene(root, 300, 300));
-        Stage.show();
+    public void start(Stage stage) throws Exception{
+        stage.setTitle("Hello World");
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/java/sample.fxml"));
+        loader.setClassLoader(Main.class.getClassLoader());
+        Parent root = loader.load();
+        stage.setScene(new Scene(root, 300, 300));
+        stage.show();
     }
 
     public static void main(String[] args) {

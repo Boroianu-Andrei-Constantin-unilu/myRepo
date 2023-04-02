@@ -10,7 +10,7 @@ public class Main extends Application {
         return new StackPane (new Text ("Hello World"));
     }
     public void start(Stage stage) {
-        stage.setScene(new Scene(createContent(), 300, 300));
+        stage.setScene(new Scene(createContent( ), 300, 300));
         stage.show();
     }
     public static void main(String[] args)
