@@ -44,7 +44,7 @@ public void start(Stage primaryStage) {
    p.setOnMouseReleased(e -> pt.play());
 
    primaryStage.setTitle(" ");
-   primaryStage.setScene(new Scene(p, 590, 175));
+   primaryStage.setScene(new Scene(p, 595, 175));
    primaryStage.show();
 }
 public static void main(String[] args) 

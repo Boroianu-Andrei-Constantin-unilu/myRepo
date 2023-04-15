@@ -23,7 +23,7 @@ public class PathTDemo extends Application
     {
         Group root = new Group();
         primaryStage.setResizable(false);
-        primaryStage.setScene(new Scene(root, 590, 460));
+        primaryStage.setScene(new Scene(root, 595, 460));
 
         // Ellipse path example
         Rectangle rect = new Rectangle(0, 0, 40, 40);

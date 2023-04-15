@@ -22,7 +22,7 @@ public class QuadCurveExample extends Application {
       Group root = new Group(quadCurve);
       
       //Creating a scene object 
-      Scene scene = new Scene(root, 590, 300);  
+      Scene scene = new Scene(root, 595, 300);  
       
       //Setting title to the Stage 
       stage.setTitle("Drawing a Quad curve"); 

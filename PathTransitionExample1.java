@@ -74,7 +74,7 @@ public class PathTransitionExample1 extends Application {
       Group root = new Group(circle); 
          
       //Creating a scene object 
-      Scene scene = new Scene(root, 590, 300);   
+      Scene scene = new Scene(root, 595, 300);   
       
       //Setting title to the Stage 
       stage.setTitle("Path transition example"); 

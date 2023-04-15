@@ -28,13 +28,13 @@ public class AnimationPath extends Application {
     Random random = new Random();
     Group group = new Group();
     Rectangle object = new Rectangle(10, 10, 10, 10);
-    Circle circle = new Circle(random.nextInt(590), random.nextInt(590), 5);
-    QuadCurve curve1 = new QuadCurve(10,10, random.nextInt(590), random.nextInt(590), 0, random.nextInt(590));
-    QuadCurve curve2 = new QuadCurve(curve1.getEndX(), curve1.getEndY(), random.nextInt(590), random.nextInt(590), random.nextInt(590), 590);
-    QuadCurve curve3 = new QuadCurve(curve2.getEndX(), curve2.getEndY(), random.nextInt(590), random.nextInt(590), 590, random.nextInt(590));
-    QuadCurve curve4 = new QuadCurve(curve3.getEndX(), curve3.getEndY(), random.nextInt(590), random.nextInt(590), random.nextInt(590), 0);
-    QuadCurve curve5 = new QuadCurve(curve4.getEndX(), curve4.getEndY(), random.nextInt(590), random.nextInt(590), 0, random.nextInt(590));
-    QuadCurve curve6 = new QuadCurve(curve1.getEndX(), curve1.getEndY(), random.nextInt(590), random.nextInt(590), random.nextInt(590), 590);
+    Circle circle = new Circle(random.nextInt(595), random.nextInt(595), 5);
+    QuadCurve curve1 = new QuadCurve(10,10, random.nextInt(595), random.nextInt(595), 0, random.nextInt(595));
+    QuadCurve curve2 = new QuadCurve(curve1.getEndX(), curve1.getEndY(), random.nextInt(595), random.nextInt(595), random.nextInt(595), 595);
+    QuadCurve curve3 = new QuadCurve(curve2.getEndX(), curve2.getEndY(), random.nextInt(595), random.nextInt(595), 595, random.nextInt(595));
+    QuadCurve curve4 = new QuadCurve(curve3.getEndX(), curve3.getEndY(), random.nextInt(595), random.nextInt(595), random.nextInt(595), 0);
+    QuadCurve curve5 = new QuadCurve(curve4.getEndX(), curve4.getEndY(), random.nextInt(595), random.nextInt(595), 0, random.nextInt(595));
+    QuadCurve curve6 = new QuadCurve(curve1.getEndX(), curve1.getEndY(), random.nextInt(595), random.nextInt(595), random.nextInt(595), 595);
     object.setFill(Color.DARKRED);
     group.getChildren().addAll(circle, object);
 
@@ -61,7 +61,8 @@ public class AnimationPath extends Application {
       if (object.getLayoutX() > scene.getWidth() || object.getLayoutY() > scene.getHeight() ||
           object.getLayoutX() < scene.getWidth() || object.getLayoutY() < scene.getHeight()) {
                 
-          circle.relocate(random.nextInt(590), random.nextInt(590));
+          circle.relocate(random.nextInt(595), random.nextInt(595));
+          object.setFill(Color.color (Math.random(), Math.random(), Math.random()));
 
           PathTransition pathTransition2 = new PathTransition();
           pathTransition2.setDuration(Duration.seconds(2));
@@ -79,7 +80,8 @@ public class AnimationPath extends Application {
             if (object.getLayoutX() > scene.getWidth() || object.getLayoutY() > scene.getHeight() ||
                 object.getLayoutX() < scene.getWidth() || object.getLayoutY() < scene.getHeight()) {
                 
-                circle.relocate(random.nextInt(590), random.nextInt(590));
+                circle.relocate(random.nextInt(595), random.nextInt(595));
+                object.setFill(Color.color (Math.random(), Math.random(), Math.random()));
 
                 PathTransition pathTransition3 = new PathTransition();
                 pathTransition3.setDuration(Duration.seconds(2));
@@ -97,7 +99,8 @@ public class AnimationPath extends Application {
                   if (object.getLayoutX() > scene.getWidth() || object.getLayoutY() > scene.getHeight() ||
                       object.getLayoutX() < scene.getWidth() || object.getLayoutY() < scene.getHeight()) {
 
-                  circle.relocate(random.nextInt(590), random.nextInt(590));
+                  circle.relocate(random.nextInt(595), random.nextInt(595));
+                  object.setFill(Color.color (Math.random(), Math.random(), Math.random()));
 
                   PathTransition pathTransition4 = new PathTransition();
                   pathTransition4.setDuration(Duration.seconds(2));
@@ -115,7 +118,8 @@ public class AnimationPath extends Application {
                     if (object.getLayoutX() > scene.getWidth() || object.getLayoutY() > scene.getHeight() ||
                         object.getLayoutX() < scene.getWidth() || object.getLayoutY() < scene.getHeight()) {
 
-                    circle.relocate(random.nextInt(590), random.nextInt(590));
+                    circle.relocate(random.nextInt(595), random.nextInt(595));
+                    object.setFill(Color.color (Math.random(), Math.random(), Math.random()));
 
                     PathTransition pathTransition5 = new PathTransition();
                     pathTransition5.setDuration(Duration.seconds(2));
@@ -132,6 +136,9 @@ public class AnimationPath extends Application {
 
                       if (object.getLayoutX() > scene.getWidth() || object.getLayoutY() > scene.getHeight() ||
                           object.getLayoutX() < scene.getWidth() || object.getLayoutY() < scene.getHeight()) {
+
+                      circle.relocate(random.nextInt(595), random.nextInt(595));
+                      object.setFill(Color.color (Math.random(), Math.random(), Math.random()));
                 
                       PathTransition pathTransition6 = new PathTransition();
                       pathTransition6.setDuration(Duration.seconds(2));

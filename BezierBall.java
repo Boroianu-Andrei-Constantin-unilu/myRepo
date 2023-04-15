@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 public class BezierBall extends Application {
-    private static final int WIDTH = 590;
+    private static final int WIDTH = 595;
     private static final int HEIGHT = 400;
     private static final List<Color> COLORS = Arrays.asList(Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.PURPLE, Color.ORANGE);
     private static final double CENTER_MOVE_RANGE = 50;

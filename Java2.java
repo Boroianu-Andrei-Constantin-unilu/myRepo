@@ -11,8 +11,8 @@ import java.util.Random;
 
 public class Java2 extends Application {
 
-    public static final int PANEL_WIDTH = 590;
-    public static final int PANEL_HEIGHT = 590;
+    public static final int PANEL_WIDTH = 595;
+    public static final int PANEL_HEIGHT = 595;
 
     Random ran = new Random();
 
@@ -50,12 +50,12 @@ public class Java2 extends Application {
 
     private Path createPath() {
 
-        int loc = ran.nextInt(300 + 1) + 300; // min=300 , max=590
+        int loc = ran.nextInt(300 + 1) + 300; // min=300 , max=595
 
         Path path = new Path();
 
         path.getElements().add(new MoveTo(20, 20));
-        path.getElements().add(new LineTo(loc, 590));
+        path.getElements().add(new LineTo(loc, 595));
 
         return path;
 

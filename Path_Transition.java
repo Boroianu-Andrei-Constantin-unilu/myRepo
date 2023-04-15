@@ -25,7 +25,7 @@ public void start(Stage primaryStage) throws Exception {
     //Setting up the path   
     Path path = new Path();  
     path.getElements().add (new MoveTo (150f, 70f));  
-    path.getElements().add (new CubicCurveTo (240f, 230f, 500f, 340f, 590, 50f));  
+    path.getElements().add (new CubicCurveTo (240f, 230f, 500f, 340f, 595, 50f));  
       
     //Instantiating PathTransition class   
     PathTransition pathTransition = new PathTransition();  

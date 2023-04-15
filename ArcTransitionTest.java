@@ -36,7 +36,7 @@ public class ArcTransitionTest extends Application {
 
         Pane pane = new Pane(rect);
         BorderPane root = new BorderPane(pane, null, null, controls, null);
-        primaryStage.setScene(new Scene(root, 590, 590));
+        primaryStage.setScene(new Scene(root, 595, 595));
         primaryStage.show();
     }
 

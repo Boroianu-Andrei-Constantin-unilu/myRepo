@@ -53,7 +53,7 @@ public class BezierCurveBall extends Application{
         stage.show();
 
         path.getElements().add(new MoveTo(0, 0));
-        path.getElements().add(new QuadCurveTo(random.nextInt(590), random.nextInt(590), 0, random.nextInt(590)));
+        path.getElements().add(new QuadCurveTo(random.nextInt(595), random.nextInt(595), 0, random.nextInt(595)));
         path.setOpacity(0.5);
 
         group.getChildren().add(path);

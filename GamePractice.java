@@ -22,7 +22,7 @@ public class GamePractice extends Application
     {
 
         canvas = new Pane();
-        final Scene scene = new Scene(canvas, 800, 590);
+        final Scene scene = new Scene(canvas, 800, 595);
 
         primaryStage.setTitle("Game");
         primaryStage.setScene(scene);

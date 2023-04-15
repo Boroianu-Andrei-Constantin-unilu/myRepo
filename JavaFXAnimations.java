@@ -109,7 +109,7 @@ public class JavaFXAnimations extends Application
    public void start(final Stage stage) throws Exception
    {
       final Group rootGroup = new Group();
-      final Scene scene = new Scene(rootGroup, 590, 400, Color.GHOSTWHITE);
+      final Scene scene = new Scene(rootGroup, 595, 400, Color.GHOSTWHITE);
       stage.setScene(scene);
       stage.setTitle("JavaFX 2 Animations");
       stage.show();

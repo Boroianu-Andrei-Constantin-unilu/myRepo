@@ -9,7 +9,7 @@ import javafx.util.Duration;
 
 public class BezierCurveAnimation extends Application {
 
-    private static final int WINDOW_WIDTH = 590;
+    private static final int WINDOW_WIDTH = 595;
     private static final int WINDOW_HEIGHT = 400;
 
     @Override

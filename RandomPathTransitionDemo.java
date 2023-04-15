@@ -28,7 +28,7 @@ public class RandomPathTransitionDemo extends Application {
         VBox root = new VBox();
         root.setSpacing(10);
         root.setPadding(new Insets(10));
-        Scene scene = new Scene(root, 590, 590);
+        Scene scene = new Scene(root, 595, 595);
         stage.setScene(scene);
         stage.setTitle("Random Path Transistion");
         stage.show();
