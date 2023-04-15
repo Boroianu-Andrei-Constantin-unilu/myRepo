@@ -22,7 +22,7 @@ public class PendulumAnimation extends Application {
     @Override
     public void start(final Stage stage) throws Exception {
         final Group group = new Group();
-        final Scene scene = new Scene(group, 600, 400, Color.WHITE);
+        final Scene scene = new Scene(group, 590, 400, Color.WHITE);
         stage.setScene(scene);
         stage.setTitle("Pendulum Animation");
         stage.show();

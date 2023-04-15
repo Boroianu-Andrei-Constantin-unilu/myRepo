@@ -7,7 +7,7 @@ public class Example2 extends JFrame {
     public Example2() {
         super("Ellipse Filling Demo");
 
-        setSize(800, 600);
+        setSize(800, 590);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         super.paint(getGraphics ());

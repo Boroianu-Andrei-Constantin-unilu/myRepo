@@ -15,7 +15,7 @@ import javafx.util.Duration;
 public class PathTransDemo extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Rectangle invisibleBorder = new Rectangle(600, 600);
+        Rectangle invisibleBorder = new Rectangle(590, 590);
         invisibleBorder.setFill(Color.TRANSPARENT);
         invisibleBorder.setLayoutX(-100);
         invisibleBorder.setLayoutY(-100);

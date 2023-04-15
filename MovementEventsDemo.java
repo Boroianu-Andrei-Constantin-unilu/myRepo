@@ -20,7 +20,7 @@ public class MovementEventsDemo extends Application {
     final Group group = new Group(createInstructions(), circle);
     final TranslateTransition transition = createTranslateTransition(circle);
     
-    final Scene scene = new Scene(group, 600, 400, Color.CORNSILK);
+    final Scene scene = new Scene(group, 590, 400, Color.CORNSILK);
     moveCircleOnKeyPress(scene, circle);
     moveCircleOnMousePress(scene, circle, transition);
     

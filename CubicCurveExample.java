@@ -24,7 +24,7 @@ public class CubicCurveExample extends Application {
       Group root = new Group(cubicCurve); 
          
       //Creating a scene object 
-      Scene scene = new Scene(root, 600, 300);  
+      Scene scene = new Scene(root, 590, 300);  
       
       //Setting title to the Stage 
       stage.setTitle("Drawing a cubic curve"); 

@@ -36,7 +36,7 @@ public class Main extends Application implements EventHandler<ActionEvent> {
     Label setupsLabel;
 
     static int  gameWidth= 800;
-    static int gameHeight=600;
+    static int gameHeight=590;
 
     static int fieldSize = 20;
 

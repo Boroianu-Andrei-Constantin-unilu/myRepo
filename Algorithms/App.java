@@ -19,7 +19,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        float[] amt = {400.00f,600.00f,300.00f,700.00f,600.00f};
+        float[] amt = {400.00f,590.00f,300.00f,700.00f,590.00f};
         Invoice[] invoice = new Invoice[5];
         for(int i=0;i<invoice.length;i++)
             invoice[i] = new Invoice(String.valueOf(i+1), amt[i]);

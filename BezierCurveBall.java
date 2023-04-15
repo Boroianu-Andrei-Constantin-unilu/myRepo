@@ -27,7 +27,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class BouncingBall extends Application{
+public class BezierCurveBall extends Application{
 	
     @Override
     public void start(Stage stage) {
@@ -42,7 +42,6 @@ public class BouncingBall extends Application{
         Rectangle rect2 = new Rectangle(20, 20, 20, 20);
         rect2.setFill(Color.BLUE);
         QuadCurve curve = new QuadCurve(0, 0, random.nextInt(300), random.nextInt(300), 0, random.nextInt(300));
-        QuadCurveTo curveTo = new QuadCurveTo(random.nextInt(300), random.nextInt(300), 0, random.nextInt(300));
         
         canvas.getChildren().add(object);
         canvas.getChildren().add(circle);
@@ -54,17 +53,20 @@ public class BouncingBall extends Application{
         stage.show();
 
         path.getElements().add(new MoveTo(0, 0));
-        path.getElements().add(curveTo);
+        path.getElements().add(new QuadCurveTo(random.nextInt(590), random.nextInt(590), 0, random.nextInt(590)));
+        path.setOpacity(0.5);
 
-        group.getChildren().add(curve);
+        group.getChildren().add(path);
         group.getChildren().add(rect2);
 
         PathTransition pathTransition = new PathTransition();
         pathTransition.setDuration(Duration.millis(50));
-        pathTransition.setPath(curve);
+        pathTransition.setPath(path);
         pathTransition.setNode(rect2);
         pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
         pathTransition.setCycleCount(Timeline.INDEFINITE);
+        pathTransition.setAutoReverse(true);
+        pathTransition.play();
         
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(50), new EventHandler<ActionEvent>() {
 
@@ -115,7 +117,6 @@ public class BouncingBall extends Application{
         }));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
-        pathTransition.play();
     }
     
     public static void main(String[] args) {
