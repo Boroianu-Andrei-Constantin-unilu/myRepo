@@ -1,0 +1,68 @@
+package JavaFx2DShapeExample;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Polyline;
+import javafx.stage.Stage;
+
+public class Fx2DShapeExample6 extends Application
+{
+	public static void main(String[] args)
+	{
+		Application.launch(args);
+	}
+
+	@Override
+	public void start(Stage stage)
+	{
+		// Create the Triangle
+		Polyline triangle = new Polyline();
+		triangle.getPoints().addAll(50.0, 0.0,	0.0, 50.0,
+				100.0, 50.0, 50.0, 0.0);
+		triangle.setFill(Color.WHITE);
+		triangle.setStroke(Color.BLUE);
+
+		// Create an open Parallelogram
+		Polyline parallelogram = new Polyline();
+		parallelogram.getPoints().addAll(30.0, 0.0, 130.0, 0.0,
+				100.00, 50.0,0.0, 50.0);
+		parallelogram.setFill(Color.YELLOW);
+		parallelogram.setStroke(Color.BLACK);
+
+		// Create a Hexagon
+		Polyline hexagon = new Polyline(100.0, 0.0,120.0, 20.0,
+		120.0, 40.0,100.0, 60.0,80.0, 40.0, 80.0, 20.0,100.0, 0.0);
+
+		hexagon.setFill(Color.WHITE);
+		hexagon.setStroke(Color.BLACK);
+
+		// Create the HBox
+		HBox root = new HBox();
+		// Add the children to the HBox
+		root.getChildren().addAll(triangle, parallelogram, hexagon);
+		// Set Spacing of the HBox
+		root.setSpacing(10);
+
+		// Set the Style
+		root.setStyle
+		(
+			"-fx-padding: 10;" +
+			"-fx-border-style: solid inside;" +
+			"-fx-border-width: 2;" +
+			"-fx-border-insets: 5;" +
+			"-fx-border-radius: 5;" +
+			"-fx-border-color: blue;"
+		);
+
+		// Create the Scene
+		Scene scene = new Scene(root);
+		// Add the Scene to the Stage
+		stage.setScene(scene);
+		// Set the Title of the Stage
+		stage.setTitle("A JavaFX Polyline Example");
+		// Display the Stage
+		stage.show();
+	}
+}

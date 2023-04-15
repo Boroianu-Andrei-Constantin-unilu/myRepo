@@ -5,7 +5,7 @@ import javafx.scene.shape.*;
 import javafx.stage.*;
 import javafx.util.*;
 
-public class Exercise6 extends Application{
+public class Demo extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         Circle circle = new Circle(5);
@@ -22,5 +22,10 @@ public class Exercise6 extends Application{
         Scene scene = new Scene(group, 800,800);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static void main(String[] args)
+    {
+        launch(args);
     }
 }

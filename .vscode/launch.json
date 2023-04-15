@@ -1,6 +1,20 @@
 {
     "configurations": [
         {
+            "type": "java",
+            "name": "Fx2DShapeExample9",
+            "request": "launch",
+            "mainClass": "Fx2DShapeExample9",
+            "projectName": "myRepo_7651d6b9"
+        },
+        {
+            "type": "java",
+            "name": "Fx2DShapeExample9",
+            "request": "launch",
+            "mainClass": "JavaFx2DShapeExample.Fx2DShapeExample9",
+            "projectName": "myRepo_7651d6b9"
+        },
+        {
             "name": "C/C++: g++ build and debug active file",
             "type": "cppdbg",
             "request": "launch",
