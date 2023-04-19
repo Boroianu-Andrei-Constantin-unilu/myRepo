@@ -163,9 +163,9 @@ public class AnimationPath extends Application {
         }));
         timeline3.setCycleCount(1);
         timeline3.play();
-          }
-          throw new UnsupportedOperationException("Unimplemented method 'handle'");
-          }
+        }
+        throw new UnsupportedOperationException("Unimplemented method 'handle'");
+        }
         }));
         timeline2.setCycleCount(1);
         timeline2.play();
@@ -175,9 +175,9 @@ public class AnimationPath extends Application {
         }));
         timeline.setCycleCount(1);
         timeline.play();
-  }
+        }
 
-  public static void main(final String[] arguments) {
+  public static void main( String[] arguments) {
     Application.launch(arguments);
   }
 }
