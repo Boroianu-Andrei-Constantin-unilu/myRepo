@@ -1,3 +1,6 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "editor.tabCompletion": "on",
+    "vscode-corda.isCordaProject": false,
+    "diffEditor.codeLens": true
 }
