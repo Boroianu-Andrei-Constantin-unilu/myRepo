@@ -14,22 +14,6 @@ class PickUpCommand: Command {
         }
     }
 
-class OpenCommand: Command {
-    init() {}
-
-    func run(game: Game, arguments: [String]) {
-            print("You have opened the door.")
-        }
-    }
-
-class ForceOpenCommand: Command {
-    init() {}
-
-    func run(game: Game, arguments: [String]) {
-            print("You have force-opened the door.")
-        }
-    }
-
 class LookCommand: Command {
     init() {}
 

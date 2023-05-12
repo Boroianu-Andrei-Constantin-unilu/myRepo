@@ -19,6 +19,8 @@ enum Move {
 
 class Battle1 {
 
+    /* The fightCount variable helps to create different messages, based on whether the player plays the mini game against a regular enemy or the final boss.*/
+
     var fightCount = 0
 
     init (fightCount: Int) {

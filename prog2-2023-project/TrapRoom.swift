@@ -8,6 +8,9 @@ class TrapRoom {
     var exitPos: (Int, Int)
     var health: Int
 
+    /* The InputSemaphore, DispatchSemaphore, DispatchTime and Thread features are responsible for creating a 45-second timer. */
+    /* The readNonBlock() and readInput() functions prevent an infinite loop of the map.*/
+
     let inputSemaphore = DispatchSemaphore(value: 0)
 
     private var theEnd = false

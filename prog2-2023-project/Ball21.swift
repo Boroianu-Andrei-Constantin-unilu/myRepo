@@ -4,6 +4,8 @@ class Ball21 {
 
     var ballsNr = 21
 
+    /* The roundsPlayed variable helps to create different messages, based on whether the player plays the mini game against a regular enemy or the final boss.*/
+
     var roundsPlayed = 0
 
     init(ballsNr: Int, roundsPlayed: Int) {

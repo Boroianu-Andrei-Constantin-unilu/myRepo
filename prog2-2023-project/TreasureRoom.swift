@@ -1,6 +1,9 @@
 import Foundation
+import Dispatch
 
 class TreasureRoom {
+
+    /* The DispatchQueue, TimeInterval, and Thread features are responsible for creating a 30-second timer. */
 
     private var inputQueue: DispatchQueue
 

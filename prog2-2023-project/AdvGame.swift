@@ -9,6 +9,8 @@ class AdvGame: Game {
     var inventory: [GameObject] = []
     var player = Player()
     var playerDirection: Direction = .North
+
+    /* The seven variables below prevent a mini game from being played a second time after a misspelled direction command.*/
     var armPulled = false
     var doorOpened = false
     var dicePlayed = false
@@ -90,8 +92,6 @@ class AdvGame: Game {
         self.controller.register(keyword: "look", command: LookCommand())
         self.controller.register(keyword: "pickup", command: PickUpCommand())
         self.controller.register(keyword: "pull", command: PullCommand())
-        self.controller.register(keyword: "open", command: OpenCommand())
-        self.controller.register(keyword: "force-open", command: ForceOpenCommand())
         self.controller.register(keyword: "inventory", command: InventoryCommand())
         self.controller.register(keyword: "stats", command: StatsCommand())
     }

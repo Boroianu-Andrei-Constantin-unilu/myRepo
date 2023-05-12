@@ -4,6 +4,8 @@ class DiceRoll {
     var knightWinsNr: Int
     var enemyWinsNr: Int
 
+    /* The gamesPlayed variable helps to create different messages, based on whether the player plays the mini game against a regular enemy or the final boss.*/
+
     var gamesPlayed = 0
 
     init (knightWinsNr: Int, enemyWinsNr: Int, gamesPlayed: Int) {

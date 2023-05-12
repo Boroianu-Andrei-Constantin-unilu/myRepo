@@ -298,22 +298,6 @@ class PickUpCommand: Command {
         }
     }
 
-class OpenCommand: Command {
-    init() {}
-
-    func run(game: Game, arguments: [String]) {
-            print("You have opened the door.")
-        }
-    }
-
-class ForceOpenCommand: Command {
-    init() {}
-
-    func run(game: Game, arguments: [String]) {
-            print("You have force-opened the door.")
-        }
-    }
-
 class LookCommand: Command {
     init() {}
 
@@ -390,6 +374,7 @@ class GameObject {
 
 class TreasureRoom {
 
+    /* The DispatchQueue, TimeInterval, and Thread features are responsible for creating a 30-second timer. */
     private var inputQueue: DispatchQueue
 
     init() {
@@ -439,6 +424,8 @@ class TreasureRoom {
 class DiceRoll {
     var knightWinsNr: Int
     var enemyWinsNr: Int
+
+    /* The gamesPlayed variable helps to create different messages, based on whether the player plays the mini game against a regular enemy or the final boss.*/
 
     var gamesPlayed = 0
 
@@ -537,6 +524,8 @@ enum Move {
 
 class Battle1 {
 
+    /* The fightCount variable helps to create different messages, based on whether the player plays the mini game against a regular enemy or the final boss.*/
+
     var fightCount = 0
 
     init (fightCount: Int) {
@@ -634,6 +623,9 @@ class TrapRoom {
     var currentPos: (Int, Int)
     var exitPos: (Int, Int)
     var health: Int
+
+    /* The InputSemaphore, DispatchSemaphore, DispatchTime and Thread features are responsible for creating a 45-second timer. */
+    /* The readNonBlock() and readInput() functions prevent an infinite loop of the map.*/
 
     let inputSemaphore = DispatchSemaphore(value: 0)
 
@@ -802,6 +794,8 @@ class Ball21 {
 
     var ballsNr = 21
 
+    /* The roundsPlayed variable helps to create different messages, based on whether the player plays the mini game against a regular enemy or the final boss.*/
+
     var roundsPlayed = 0
 
     init(ballsNr: Int, roundsPlayed: Int) {
@@ -927,6 +921,8 @@ class AdvGame: Game {
     var inventory: [GameObject] = []
     var player = Player()
     var playerDirection: Direction = .North
+
+    /* The seven variables below prevent a mini game from being played a second time after a misspelled direction command.*/
     var armPulled = false
     var doorOpened = false
     var dicePlayed = false
@@ -1008,8 +1004,6 @@ class AdvGame: Game {
         self.controller.register(keyword: "look", command: LookCommand())
         self.controller.register(keyword: "pickup", command: PickUpCommand())
         self.controller.register(keyword: "pull", command: PullCommand())
-        self.controller.register(keyword: "open", command: OpenCommand())
-        self.controller.register(keyword: "force-open", command: ForceOpenCommand())
         self.controller.register(keyword: "inventory", command: InventoryCommand())
         self.controller.register(keyword: "stats", command: StatsCommand())
     }
