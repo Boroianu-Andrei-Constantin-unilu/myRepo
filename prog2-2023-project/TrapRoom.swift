@@ -1,4 +1,6 @@
 import Foundation
+import Dispatch
+
 class TrapRoom {
     var x: Int
     var y: Int
