@@ -1,6 +1,5 @@
 class PickUpCommand: Command {
     init() {}
-
     func run(game: Game, arguments: [String]) {
             let input: String? = readLine()
             switch input {
@@ -16,7 +15,6 @@ class PickUpCommand: Command {
 
 class LookCommand: Command {
     init() {}
-
     func run(game: Game, arguments: [String]) {
             let input: String? = readLine()
             switch input {
@@ -36,7 +34,6 @@ class LookCommand: Command {
 
 class PullCommand: Command {
     init() {}
-
     func run(game: Game, arguments: [String]) {
         let input: String? = readLine()
         switch input {
@@ -53,7 +50,6 @@ class PullCommand: Command {
 
 class InventoryCommand: Command {
     init() {}
-
     func run(game: Game, arguments: [String]) {
             let inventory = (game as! AdvGame).inventory
             if inventory.isEmpty {

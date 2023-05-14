@@ -141,7 +141,8 @@ class GoCommand:Command {
             print("You cannot go \(direction) from here.")
             return
         }
-
+     
+        // condition required to unlock the door in the first room
         if game.currentRoom.name == "Room A" && direction == .East && !(game as! AdvGame).armPulled {
             print("The door is locked! What could be done to possibly open it?")
             game.currentRoom.name = "Room A"
@@ -284,7 +285,6 @@ Map of game
 
 class PickUpCommand: Command {
     init() {}
-
     func run(game: Game, arguments: [String]) {
             let input: String? = readLine()
             switch input {
@@ -300,7 +300,6 @@ class PickUpCommand: Command {
 
 class LookCommand: Command {
     init() {}
-
     func run(game: Game, arguments: [String]) {
             let input: String? = readLine()
             switch input {
@@ -320,7 +319,6 @@ class LookCommand: Command {
 
 class PullCommand: Command {
     init() {}
-
     func run(game: Game, arguments: [String]) {
         let input: String? = readLine()
         switch input {
@@ -337,7 +335,6 @@ class PullCommand: Command {
 
 class InventoryCommand: Command {
     init() {}
-
     func run(game: Game, arguments: [String]) {
             let inventory = (game as! AdvGame).inventory
             if inventory.isEmpty {
@@ -1063,6 +1060,8 @@ class AdvGame: Game {
     }
     }
 }
+
+/*Instantiation of the game*/
 
 let game = AdvGame()
 game.play()

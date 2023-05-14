@@ -131,6 +131,13 @@ class GoCommand:Command {
             print("You cannot go \(direction) from here.")
             return
         }
+     
+        // condition required to unlock the door in the first room
+        if game.currentRoom.name == "Room A" && direction == .East && !(game as! AdvGame).armPulled {
+            print("The door is locked! What could be done to possibly open it?")
+            game.currentRoom.name = "Room A"
+            return
+        }
         
         // set the game's current room
         game.currentRoom = nextRoom

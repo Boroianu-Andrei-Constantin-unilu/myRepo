@@ -152,5 +152,7 @@ class AdvGame: Game {
     }
 }
 
+/*Instantiation of the game*/
+
 let game = AdvGame()
 game.play()
