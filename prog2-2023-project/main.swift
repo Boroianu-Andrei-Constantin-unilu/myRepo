@@ -277,10 +277,10 @@ Beginning of main class
 /**
 Map of game                    
         Room A ←-----→  Room B          Room E  ←-----→ Room F
-                           |              |
-                           |              |
-                           |              |
-                        Room C ←-----→  Room D
+                           |              |               |
+                           |              |               |
+                           |              |               |
+                        Room C ←-----→  Room D      Room G (Exit)
 */
 
 class PickUpCommand: Command {
