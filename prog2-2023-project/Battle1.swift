@@ -30,6 +30,17 @@ class Battle1 {
     func fight() {
         fightCount += 1
 
+        var auto = false
+        print("Would you like to automate the fight (automate), or manually complete the challenge (manual)?")
+        if let mode = readLine(), mode == "automate" {
+            auto = true
+        } else if let mode = readLine(), mode == "manual" {
+            auto = false
+        } else {
+            print("Entering manual mode...")
+            auto = false
+        }
+
         if fightCount == 1 {
             print("Out of nowhere, a mummy shows up in front of you!")
             print("Stop right there, traveler! You will never get the holy Grail!")
@@ -43,13 +54,18 @@ class Battle1 {
 
         while knight.alive() && mummy.alive() {
             print("Knight HP: \(knight.health), Mummy HP: \(mummy.health)")
-            print("The enemy is ready to strike. 1 (attack) or 2 (block)?")
 
             var knightMove: Move
+            if auto == true {
+                knightMove = arc4random_uniform(2) == 0 ? .attack : .block
+            } else {
+
+            print("The enemy is ready to strike. 1 (attack) or 2 (block)?")
             if let choice = readLine(), let action = Int(choice) {
                 knightMove = action == 1 ? .attack : .block
             } else {
                 knightMove = .attack
+            }
             }
 
             let mummyMove = arc4random_uniform(2) == 0 ? Move.attack : Move.block

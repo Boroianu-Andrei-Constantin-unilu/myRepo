@@ -45,7 +45,7 @@ class TreasureRoom {
 
         if !((game as! AdvGame).armPulled) {
             print("Alas, you did not manage to unlock the door in time, and were intoxicated as a result...")
-            print("If only you searched the statue more clearly...")
+            print("If only you looked at the statue more closely...")
             exit(0)
         }
     }

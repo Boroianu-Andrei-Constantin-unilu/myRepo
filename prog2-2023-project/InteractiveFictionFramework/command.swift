@@ -98,6 +98,7 @@ class StopCommand:Command {
 
     func run(game: Game, arguments: [String]) {
         game.finished = true
+        exit(0)
     }
 }
 

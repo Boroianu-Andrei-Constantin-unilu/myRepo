@@ -8,12 +8,28 @@ class Ball21 {
 
     var roundsPlayed = 0
 
+    var auto2 = false
+
     init(ballsNr: Int, roundsPlayed: Int) {
         self.ballsNr = ballsNr
         self.roundsPlayed = roundsPlayed
     }
+    func gameMode() {
+        print("Would you like to automate the mini game (automate), or manually complete the challenge (manual)?")
+        let mode2 = readLine()
+        if mode2 == "automate" {
+            auto2 = true
+        } else if mode2 == "manual" {
+            auto2 = false
+        } else {
+            print("Entering manual mode...")
+            auto2 = false
+        }
+    }
 
     func play() {
+        gameMode()
+
         roundsPlayed += 1
 
         if roundsPlayed == 1 {
@@ -60,6 +76,11 @@ class Ball21 {
     }
 
     func playerTurn() {
+        if auto2 == true {
+            let ballsRemoved = min(ballsNr, Int.random(in: 1...3))
+            ballsNr -= ballsRemoved
+            print("The knight has taken \(ballsRemoved) balls. \(ballsNr) remain.")
+        } else {
         while true {
             print("How many balls do you desire to remove (1 to 3)?")
             let input = readLine() ?? ""
@@ -74,6 +95,7 @@ class Ball21 {
             } else {
                 print("I am sorry, only 1, 2 or 3 balls can be removed.")
             }
+        }
         }
     }
 

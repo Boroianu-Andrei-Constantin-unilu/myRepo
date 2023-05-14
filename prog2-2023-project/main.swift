@@ -106,6 +106,7 @@ class StopCommand:Command {
 
     func run(game: Game, arguments: [String]) {
         game.finished = true
+        exit(0)
     }
 }
 
@@ -280,7 +281,7 @@ Map of game
                            |              |               |
                            |              |               |
                            |              |               |
-                        Room C ←-----→  Room D      Room G (Exit)
+                        Room C ←-----→  Room D      Room G (exit)
 */
 
 class PickUpCommand: Command {
@@ -304,13 +305,15 @@ class LookCommand: Command {
             let input: String? = readLine()
             switch input {
                 case "room":
-                print("Room with various items")
+                print("The treasure room is filled with various items, such as a statue, a chest.")
                 case "treasure":
-                print("Rich, but useless")
+                print("The treasure lying around you is abundent, but useless for your purposes.")
                 case "chest":
-                print("Map for future level")
+                print("The chest contains an indeschiperable map of the pyramid. You decide to leave it where it is.")
                 case "statue":
-                print("Loose arm, might unlock exit")
+                print("The statue's left arm seems loose...")
+                case "stop":
+                exit(0)
                 default:
                 print("?")
             }
@@ -322,8 +325,12 @@ class PullCommand: Command {
     func run(game: Game, arguments: [String]) {
         let input: String? = readLine()
         switch input {
-            case "arm":
+            case "left arm":
             (game as! AdvGame).armPulled = true
+            case "right arm":
+            print("Nothing happens. Maybe the oother arm could help?")
+            case "arm":
+            print("Which one?")
             case "":
             print("Which item would you like to act upon?")
             default:
@@ -354,6 +361,19 @@ class StatsCommand: Command {
         let player = (game as! AdvGame).player
         print("Player stats: ")
         print("Power: \(player.power), Knowledge: \(player.knowledge), Luck: \(player.luck)")
+    }
+}
+
+class WalkThroughCommand: Command {
+    init() {}
+    func run(game: Game, arguments: [String]) {
+        print("Room A: Look at the statue and pull the loose arm. If 30 seconds pass without the door being open, you die.")
+        print("Room B: Automated: If you get less wins than your opponent on a dice-rolling game, you die.")
+        print("Room C: Automated or manual: You must fight the enemy until he loses health, otherwise you die.")
+        print("Room D: Pass the trap room successfully (. not #) in less than 45 seconds, by stepping on the right tiles.")
+        print("Room E: Automated or manual: If you pick the last ball, you win. If the enemy does, you die.")
+        print("Room F: Automated or manual: You can beat the final boss by either playing one of the previous mini games, or by conventional fight.")
+        print("Room G: This room triggers the end of the game, with a congratulatory message.")
     }
 }
 
@@ -412,7 +432,7 @@ class TreasureRoom {
 
         if !((game as! AdvGame).armPulled) {
             print("Alas, you did not manage to unlock the door in time, and were intoxicated as a result...")
-            print("If only you searched the statue more clearly...")
+            print("If only you had looked at the statue more closely...")
             exit(0)
         }
     }
@@ -532,6 +552,17 @@ class Battle1 {
     func fight() {
         fightCount += 1
 
+        var auto = false
+        print("Would you like to automate the fight (automate), or manually complete the challenge (manual)?")
+        if let mode = readLine(), mode == "automate" {
+            auto = true
+        } else if let mode = readLine(), mode == "manual" {
+            auto = false
+        } else {
+            print("Entering manual mode...")
+            auto = false
+        }
+
         if fightCount == 1 {
             print("Out of nowhere, a mummy shows up in front of you!")
             print("Stop right there, traveler! You will never get the holy Grail!")
@@ -545,13 +576,18 @@ class Battle1 {
 
         while knight.alive() && mummy.alive() {
             print("Knight HP: \(knight.health), Mummy HP: \(mummy.health)")
-            print("The enemy is ready to strike. 1 (attack) or 2 (block)?")
 
             var knightMove: Move
+            if auto == true {
+                knightMove = arc4random_uniform(2) == 0 ? .attack : .block
+            } else {
+
+            print("The enemy is ready to strike. 1 (attack) or 2 (block)?")
             if let choice = readLine(), let action = Int(choice) {
                 knightMove = action == 1 ? .attack : .block
             } else {
                 knightMove = .attack
+            }
             }
 
             let mummyMove = arc4random_uniform(2) == 0 ? Move.attack : Move.block
@@ -683,6 +719,8 @@ class TrapRoom {
             }
         }
     }
+ 
+    // The reversed() function places the initial position on the bottom-left of the map.
 
     func drawRoom() {
         for b in (0..<y).reversed() {
@@ -693,6 +731,9 @@ class TrapRoom {
                 if exitPos == (a, b) {
                     print("Exit", terminator: " ")
                 }
+
+                /* The "." are the safe tiles to walk on, and the "#" are the dangerous ones (traps). */
+
                 if roomGrid[b][a] == true {
                     print("." , terminator: " ")
                 } else {
@@ -795,12 +836,28 @@ class Ball21 {
 
     var roundsPlayed = 0
 
+    var auto2 = false
+
     init(ballsNr: Int, roundsPlayed: Int) {
         self.ballsNr = ballsNr
         self.roundsPlayed = roundsPlayed
     }
+    func gameMode() {
+        print("Would you like to automate the mini game (automate), or manually complete the challenge (manual)?")
+        let mode2 = readLine()
+        if mode2 == "automate" {
+            auto2 = true
+        } else if mode2 == "manual" {
+            auto2 = false
+        } else {
+            print("Entering manual mode...")
+            auto2 = false
+        }
+    }
 
     func play() {
+        gameMode()
+
         roundsPlayed += 1
 
         if roundsPlayed == 1 {
@@ -847,6 +904,11 @@ class Ball21 {
     }
 
     func playerTurn() {
+        if auto2 == true {
+            let ballsRemoved = min(ballsNr, Int.random(in: 1...3))
+            ballsNr -= ballsRemoved
+            print("The knight has taken \(ballsRemoved) balls. \(ballsNr) remain.")
+        } else {
         while true {
             print("How many balls do you desire to remove (1 to 3)?")
             let input = readLine() ?? ""
@@ -861,6 +923,7 @@ class Ball21 {
             } else {
                 print("I am sorry, only 1, 2 or 3 balls can be removed.")
             }
+        }
         }
     }
 
@@ -1003,6 +1066,7 @@ class AdvGame: Game {
         self.controller.register(keyword: "pull", command: PullCommand())
         self.controller.register(keyword: "inventory", command: InventoryCommand())
         self.controller.register(keyword: "stats", command: StatsCommand())
+        self.controller.register(keyword: "walkthrough", command: WalkThroughCommand())
     }
 
     func play() {

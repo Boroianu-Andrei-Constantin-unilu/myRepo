@@ -1,4 +1,19 @@
 import Foundation
+import Dispatch
+#if os(macOS)
+import Darwin
+#else
+import Glibc
+#endif
+
+/**
+Map of game                    
+        Room A ←-----→  Room B          Room E  ←-----→ Room F
+                           |              |               |
+                           |              |               |
+                           |              |               |
+                        Room C ←-----→  Room D      Room G (exit)
+*/
 
 class AdvGame: Game {
     lazy var controller: Controller = Controller(game: self)
@@ -94,6 +109,7 @@ class AdvGame: Game {
         self.controller.register(keyword: "pull", command: PullCommand())
         self.controller.register(keyword: "inventory", command: InventoryCommand())
         self.controller.register(keyword: "stats", command: StatsCommand())
+        self.controller.register(keyword: "walkthrough", command: WalkThroughCommand())
     }
 
     func play() {

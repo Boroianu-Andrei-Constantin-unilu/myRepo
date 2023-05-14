@@ -70,9 +70,11 @@ class TrapRoom {
             }
         }
     }
+    
+    // The reversed() function places the initial position on the bottom-left of the map.
 
     func drawRoom() {
-        for b in 0..<y {
+        for b in 0..<y.reversed() {
             for a in 0..<x {
                 if currentPos == (a, b) {
                     print("Me", terminator: " ")
@@ -80,6 +82,9 @@ class TrapRoom {
                 if exitPos == (a, b) {
                     print("Exit", terminator: " ")
                 }
+
+                /* The "." are the safe tiles to walk on, and the "#" are the dangerous ones (traps). */
+
                 if roomGrid[b][a] == true {
                     print("." , terminator: " ")
                 } else {
