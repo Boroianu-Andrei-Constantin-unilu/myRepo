@@ -2,8 +2,17 @@ use std::fs::File;
 use std::fs::OpenOptions;
 use std::io::Read;
 use std::io::Write;
+use std::fs;
 
 fn main() {
+    // Create a file
+    let mut data_file = File::create("data.txt").expect("creation failed");
+
+    // Write contents to the file
+    data_file.write("Hello, World!".as_bytes()).expect("write failed");
+
+    println!("Created a file data.txt");
+
     // Open a file in read only mode in the local file system
     let data_result = File::open("data.txt");
 
@@ -27,19 +36,6 @@ fn main() {
 
     println!("File content: {:?}", file_content);
 
-    // Create a file
-    let mut data_file = File::create("data.txt").expect("creation failed");
-
-    // Write contents to the file
-    data_file.write("Hello, World!".as_bytes()).expect("write failed");
-
-    println!("Created a file data.txt");
-
-    // Remove a file
-    fs::remove_file("data.txt").expect("could not remove file");
-    
-    println!("Removed file data.txt");
-
     // Open a file with append option
     let mut data_file = OpenOptions::new()
         .append(true)
@@ -52,4 +48,9 @@ fn main() {
         .expect("write failed");
 
     println!("Appended content to a file");
+
+    // Remove a file
+    fs::remove_file("data.txt").expect("could not remove file");
+    
+    println!("Removed file data.txt");
 }
